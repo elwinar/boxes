@@ -1,0 +1,42 @@
+{
+	"description": "Archlinux32 bits image",
+	"builders": [
+		{
+			"type": "virtualbox-iso",
+			"guest_os_type": "ArchLinux",
+			"iso_url": "http://archlinux.mirrors.ovh.net/archlinux/iso/2015.03.01/archlinux-2015.03.01-dual.iso",
+			"iso_checksum": "4bda93fc9aa275a0b67783ad4ff5a957",
+			"iso_checksum_type": "md5",
+			"hard_drive_interface": "sata",
+			"disk_size": 10240,
+			"vboxmanage": [
+				["modifyvm", "{{.Name}}", "--memory", "512"],
+				["modifyvm", "{{.Name}}", "--cpus", "1"]
+			],
+			"boot_wait": "5s",
+			"guest_additions_mode": "disable",
+			"http_directory": ".",
+			"boot_command": [
+				"<enter><wait10><wait10><wait5>",
+				"curl -O http://{{.HTTPIP}}:{{.HTTPPort}}/install.sh<enter><wait>",
+				"bash ./install.sh<enter>"
+			],
+			"shutdown_command": "shutdown now",
+			"ssh_username": "root",
+			"ssh_password": "",
+			"ssh_wait_timeout": "20m"
+		}
+	],
+	"provisioners": [
+		{
+			"type": "shell",
+			"script": "provision.sh"
+		}
+	],
+	"post-processors": [
+		{
+			"type": "vagrant",
+			"output": "archlinux32-{{.Provider}}.box"
+		}
+	]
+}
