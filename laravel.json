@@ -1,5 +1,5 @@
 {
-	"description": "Archlinux32 bits image",
+	"description": "Laravel development",
 	"builders": [
 		{
 			"type": "virtualbox-iso",
@@ -17,9 +17,9 @@
 			"guest_additions_mode": "disable",
 			"http_directory": ".",
 			"boot_command": [
-				"<enter><wait10><wait10><wait5>",
-				"curl -O http://{{.HTTPIP}}:{{.HTTPPort}}/install.sh<enter><wait>",
-				"bash ./install.sh<enter>"
+				"<enter><wait10><wait10><wait10><wait10><wait10><wait10>",
+				"curl -O http://{{.HTTPIP}}:{{.HTTPPort}}/install-archlinux.sh<enter><wait>",
+				"bash ./install-archlinux.sh<enter>"
 			],
 			"shutdown_command": "shutdown now",
 			"ssh_username": "root",
@@ -30,7 +30,11 @@
 	"provisioners": [
 		{
 			"type": "shell",
-			"script": "provision.sh"
+			"script": "provision-vagrant.sh"
+		}
+		{
+			"type": "shell",
+			"script": "provision-nginx.sh"
 		}
 	],
 	"post-processors": [

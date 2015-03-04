@@ -4,7 +4,6 @@ DISK="/dev/sda"
 PARTITION_NUMBER="1"
 PARTITION="$DISK$PARTITION_NUMBER"
 MOUNTPOINT="/mnt"
-FQDN="vagrant"
 TIMEZONE="Europe/Paris"
 LANGUAGE="en_US.UTF-8"
 KEYMAP="fr"
@@ -44,8 +43,7 @@ genfstab -U -p $MOUNTPOINT >> $MOUNTPOINT/etc/fstab
 # Setup
 #
 
-# Hostname and locales
-arch-chroot $MOUNTPOINT echo $FQDN > /etc/hostname
+# Timezone and locales
 arch-chroot $MOUNTPOINT ln -s /usr/share/zoneinfo/$TIMEZONE /etc/localtime
 arch-chroot $MOUNTPOINT echo "KEYMAP=$KEYMAP" > /etc/vconsole.conf
 arch-chroot $MOUNTPOINT sed -i "s/#$LANGUAGE/$LANGUAGE/" /etc/locale.gen
