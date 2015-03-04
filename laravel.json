@@ -31,16 +31,20 @@
 		{
 			"type": "shell",
 			"script": "provision-vagrant.sh"
-		}
+		},
 		{
 			"type": "shell",
-			"script": "provision-nginx.sh"
+			"script": "provision-laravel.sh"
+		},
+		{
+			"type": "shell",
+			"script": "provision-cleanup.sh"
 		}
 	],
 	"post-processors": [
 		{
 			"type": "vagrant",
-			"output": "archlinux32-{{.Provider}}.box"
+			"output": "{{.Provider}}-laravel.box"
 		}
 	]
 }

@@ -38,7 +38,3 @@ systemctl enable rpcbind nfs-server nfs-client.target
 
 # Utils
 pacman -S --noconfirm htop tmux
-
-# Cleanup
-
-pacman -Scc --noconfirm
