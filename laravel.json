@@ -30,23 +30,16 @@
 	"provisioners": [
 		{
 			"type": "shell",
-			"script": "provision-vagrant.sh"
-		},
-		{
-			"type": "shell",
-			"script": "provision-nginx.sh"
-		},
-		{
-			"type": "shell",
-			"script": "provision-php.sh"
-		},
-		{
-			"type": "shell",
-			"script": "provision-composer.sh"
-		},
-		{
-			"type": "shell",
-			"script": "provision-cleanup.sh"
+			"scripts": [
+				"provision-vagrant.sh",
+				"provision-nginx.sh",
+				"provision-php.sh",
+				"provision-composer.sh",
+				"provision-nodejs.sh",
+				"provision-gulp.sh",
+				"provision-bower.sh",
+				"provision-cleanup.sh"
+			]
 		}
 	],
 	"post-processors": [

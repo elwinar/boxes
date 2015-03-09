@@ -2,7 +2,6 @@
 
 pacman -S --noconfirm nginx
 systemctl enable nginx
-
 echo "user vagrant vagrant;
 worker_processes 1;
 
