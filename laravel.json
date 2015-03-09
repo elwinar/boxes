@@ -34,7 +34,15 @@
 		},
 		{
 			"type": "shell",
-			"script": "provision-laravel.sh"
+			"script": "provision-nginx.sh"
+		},
+		{
+			"type": "shell",
+			"script": "provision-php.sh"
+		},
+		{
+			"type": "shell",
+			"script": "provision-composer.sh"
 		},
 		{
 			"type": "shell",

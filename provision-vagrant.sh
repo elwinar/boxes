@@ -35,6 +35,3 @@ chmod 0600 /home/vagrant/.ssh/authorized_keys
 # NFS
 pacman -S --noconfirm net-tools nfs-utils
 systemctl enable rpcbind nfs-server nfs-client.target
-
-# Utils
-pacman -S --noconfirm htop tmux
