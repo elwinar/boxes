@@ -30,11 +30,10 @@
 	"provisioners": [
 		{
 			"type": "shell",
-			"script": "provision-vagrant.sh"
-		},
-		{
-			"type": "shell",
-			"script": "provision-cleanup.sh"
+			"scripts": [
+				"provision-vagrant.sh",
+				"provision-cleanup.sh"
+			]
 		}
 	],
 	"post-processors": [
