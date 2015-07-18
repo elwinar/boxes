@@ -4,8 +4,8 @@
 		{
 			"type": "virtualbox-iso",
 			"guest_os_type": "ArchLinux",
-			"iso_url": "http://archlinux.mirrors.ovh.net/archlinux/iso/2015.03.01/archlinux-2015.03.01-dual.iso",
-			"iso_checksum": "4bda93fc9aa275a0b67783ad4ff5a957",
+			"iso_url": "http://archlinux.mirrors.ovh.net/archlinux/iso/2015.07.01/archlinux-2015.07.01-dual.iso",
+			"iso_checksum": "957232076cd0b32083a702b1b2e77796",
 			"iso_checksum_type": "md5",
 			"hard_drive_interface": "sata",
 			"disk_size": 10240,
