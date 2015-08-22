@@ -34,7 +34,7 @@
 			"scripts": [
 				"provisioners/vagrant.sh",
 				"provisioners/golang.sh",
-				"provisioners/leanup.sh"
+				"provisioners/cleanup.sh"
 			]
 		}
 	],
