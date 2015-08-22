@@ -64,7 +64,7 @@ arch-chroot $MOUNTPOINT sed -i 's/sda3/sda1/' /boot/syslinux/syslinux.cfg
 # Install and configure openssh
 arch-chroot $MOUNTPOINT pacman -S --noconfirm openssh
 arch-chroot $MOUNTPOINT systemctl enable sshd
-arch-chroot $MOUNTPOINT sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/' /etc/ssh/sshd_config
+arch-chroot $MOUNTPOINT sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 arch-chroot $MOUNTPOINT sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 arch-chroot $MOUNTPOINT sed -i 's/#PermitEmptyPasswords no/PermitEmptyPasswords yes/' /etc/ssh/sshd_config
 

@@ -24,7 +24,8 @@
 			"shutdown_command": "shutdown now",
 			"ssh_username": "root",
 			"ssh_password": "",
-			"ssh_wait_timeout": "20m"
+			"ssh_wait_timeout": "20m",
+			"headless": true
 		}
 	],
 	"provisioners": [
